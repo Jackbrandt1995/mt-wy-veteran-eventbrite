@@ -171,6 +171,18 @@ def main() -> int:
         save_json({"generated": False, "error": str(exc)})
         return 1
 
+def main() -> int:
+    token = get_token()
+    try:
+        print("Token acquired, starting fetch_events...")  # Debug
+        payload = fetch_events(token)
+        print(f"Fetched {payload['count']} events.")  # Debug
+        save_json(payload)
+        return 0
+    except Exception as exc:
+        save_json({"generated": False, "error": str(exc)})
+        print(f"Error: {exc}")  # Debug
+        return 1
 
 if __name__ == "__main__":
     sys.exit(main())
