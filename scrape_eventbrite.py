@@ -11,7 +11,7 @@ TOKEN = os.environ.get("EVENTBRITE_TOKEN")
 QUERY = os.environ.get("EVENTBRITE_QUERY", "veteran OR veterans")
 STATES = ["Montana", "Wyoming"]
 WITHIN = os.environ.get("EVENTBRITE_WITHIN", "250mi")
-DAYS = int(os.environ.get("EVENTBRITE_DAYS", "60"))
+DAYS = int(os.environ.get("EVENTBRITE_DAYS", "120"))
 OUTPUT_FILE = "events.json"
 
 def get_date_range(days):
